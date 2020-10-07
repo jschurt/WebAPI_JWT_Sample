@@ -1,0 +1,16 @@
+﻿1) Add class TokenSettings.cs
+2) Add TokenSettings in appsettings.json
+3) Install Package Microsoft.AspNetCore.Authentication.JwtBearer
+4) Add JWTConfig.cs (Note. In APICompleta project was edited the class IdentityConfig.js)
+5) Add services.addJWT(Configuration) in startup
+6) Add app.UseAuthentication() and app.UseAuthorization() in startup (in this order)
+7) Add AuthController (to register and autenticate user). An example using Identity can be found APICompleta project
+
+
+Testing
+
+- Using postman try to access [Get] https://localhost:44345/weatherforecast (Expected result: 401 - Unauthorized)
+
+- Using PostMan ([Post] https://localhost:44345/api/logar), get the token
+
+- Using Postman, add the token (Authorization tab + Type = Bearer Token) and run again (Expected result: 200) 
